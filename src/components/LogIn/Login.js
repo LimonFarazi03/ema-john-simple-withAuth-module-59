@@ -1,6 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Login.css";
+import { Link } from "react-router-dom";
+import Glogo from '../../images/g-logo.png'
+
 const Login = () => {
   return (
     <div className="form-container">
@@ -17,7 +19,11 @@ const Login = () => {
           </div>
           <input className="form-submit-btn" type="submit" />
         </form>
-        <p>New to Ema-john? <Link className="form-link" to='/signup'>Create New Account</Link></p>
+        <p className="signInOut">New to Ema-john? <Link className="form-link" to='/signup'>Create New Account</Link></p>
+        <div className="connect-google">
+          <img src={Glogo} alt="Google-logo"/>
+          <p>Connect With Google</p>
+        </div>
       </div>
     </div>
   );
