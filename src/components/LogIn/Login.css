@@ -41,6 +41,10 @@
   font-size: 18px;
   margin-top: 30px;
   cursor: pointer;
+  transition: .5s;
+}
+.form-submit-btn:hover{
+  background: #9157004d;
 }
 .form-link {
   color: #ff9900;
