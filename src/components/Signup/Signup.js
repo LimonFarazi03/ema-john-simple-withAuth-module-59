@@ -16,15 +16,15 @@ const Signup = () => {
 
   const handleEmailBlur = (event) =>{
     setEmail(event.target.value);
-    console.log(email)
+    // console.log(email)
   }
   const handlePasswordBlur = (event) =>{
     setPassword(event.target.value);
-    console.log(password)
+    // console.log(password)
   }
   const handleConfirmPasswordBlur = (event) =>{
     setConfirmPassword(event.target.value);
-    console.log(confirmPassword)
+    // console.log(confirmPassword)
   }
   // On Submit
   const handleCreateUser = (event) =>{
