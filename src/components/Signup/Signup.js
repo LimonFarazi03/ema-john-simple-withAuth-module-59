@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Signup.css';
-import Glogo from '../../images/g-logo.png'
+import Glogo from '../../images/g-logo.png';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Signup = () => {
   const [email,setEmail] = useState('')
   const [password,setPassword] = useState('')
   const [confirmPassword,setConfirmPassword] = useState('')
   const [error,setError] = useState('')
+  const navigate = useNavigate();
+
+  const [createUserWithEmailAndPassword,user] = useCreateUserWithEmailAndPassword(auth)
 
   const handleEmailBlur = (event) =>{
     setEmail(event.target.value);
@@ -28,6 +33,14 @@ const Signup = () => {
       setError("Your password did't same")
       return
     }
+    if(password < 6){
+      setError("Password will be 6 character or longer")
+      return
+    }
+    createUserWithEmailAndPassword(email, password)
+  }
+  if(user){
+    navigate('/')
   }
 
   return (
@@ -50,6 +63,7 @@ const Signup = () => {
           <input className="form-submit-btn" type="submit" value='Sign Up' />
         </form>
         <p style={{color:'red'}}>{error}</p>
+        {/* <p style={{color:'red'}}>{error}</p> */}
         <p className="signInOut">Already have an account? <Link className="form-link" to='/login'>Login</Link></p>
         <div className="connect-google">
           <img src={Glogo} alt="Google-logo"/>
