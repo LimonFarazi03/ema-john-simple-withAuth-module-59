@@ -17,3 +17,27 @@
 .header a:hover{
     color: orange;
 }
+/* user-logo */
+.user-logo{
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    display: inline;
+    margin-left: 10px;
+    border: 1px solid black;
+}
+/* Button  */
+.button {
+    border: none;
+    background: #166FE5;
+    padding: 9px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16.5px;
+    color: white;
+    margin: 0px 0px 0px 13px;
+}
+.button:hover{
+    background: #306bba;
+    color: white;
+}
